@@ -71,3 +71,5 @@ do {
 4. credit.c - uses Luhn's algorithm to determine whether a credit number number is valid, and which type it corresponds to
 
 5. half.c - creating the function which calculates the amount owed by each person, taking into account tax and tip
+
+6. prime.c - created a boolean function which determines if a number is prime or not
