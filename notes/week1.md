@@ -13,10 +13,10 @@
 
 
 ## C Basics
-- To compile: ``` 'clang program.c -o program' ```
+- To compile: ```clang program.c -o program```
 - Always declare variable types
-- ``` '#include <stdio.h> ``` lets you use ``` 'printf'```
-- ```'#inlcude <cs50.h>'``` gives you functions like ```'get_int'```
+- ```#include <stdio.h>``` lets you use ```printf```
+- ```#inlcude <cs50.h>``` gives you functions like ```get_int```
 
 ## Basic Example
 ```c
