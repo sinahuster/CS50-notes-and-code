@@ -68,4 +68,4 @@ do {
 
 3. cash.c - uses a greedy algorithm to compute the minimum number of coins required for change
 
-4. credit.c - 
+4. credit.c - uses Luhn's algorithm to determine whether a credit number number is valid, and which type it corresponds to 
