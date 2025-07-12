@@ -8,6 +8,7 @@
 - ```ctype.h``` (character functions)
 - Command-line arguements (```argc```, ```argv```)
 - Exit status (```return 0``` and ```return 1```)
+- use of ```echo $?``` to determine exit status 
   
 
 
