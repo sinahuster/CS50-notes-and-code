@@ -67,3 +67,5 @@ int main(int argc, string argv[]) {
 5. no-vowels.c - replaces all vowels, except u, in a word with a number 
 
 6. triangle.c - determines if the triangle is valid based on the length of the sides
+
+7. password.c - check if a password is valid, by ensuring it contains all necessary characters 
