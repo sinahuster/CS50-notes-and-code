@@ -64,4 +64,6 @@ int main(int argc, string argv[]) {
 
 4. substitution.c - uses a substitution cipher based on a 26-letter key provided as a command-line argument, replacing each letter according to a custom alphabet mapping
 
-5. no-vowels.c - 
+5. no-vowels.c - replaces all vowels, except u, in a word with a number 
+
+6. triangle.c - determines if the triangle is valid based on the length of the sides
