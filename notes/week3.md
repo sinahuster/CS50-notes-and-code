@@ -8,7 +8,7 @@
 - Structs
 - Recursion
 
-##Searching algorithms 
+## Searching algorithms 
 
 Linear Search 
 - Iterates through each elemnent one by one
