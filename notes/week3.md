@@ -141,3 +141,5 @@ void countdown(int n)
 3. plurality.c - runs a pluraity election, where each person votes for one person to select a winner.
 
 4. runoff.c - simulates a runoff election, which involves ranked choice voting (only completed the functions).
+
+5. tideman.c - simulates the tideman voting methos, which uses ranked choice voting via ranked pairs (only completed the functions)
