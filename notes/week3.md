@@ -144,6 +144,6 @@ void countdown(int n)
 
 5. tideman.c - simulates the tideman voting methos, which uses ranked choice voting via ranked pairs (only completed the functions)
 
-6. atoi.c - a recursive relationship to change a string into an integer
+6. atoi.c - a recursive relationship to change a string into an integer (only completed the function)
 
-7. snackbar.c - creates a menu and allows orders from the menu and gives the price 
+7. snackbar.c - creates a menu and allows orders from the menu and gives the price (only completed the functions)
