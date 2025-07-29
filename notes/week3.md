@@ -139,3 +139,5 @@ void countdown(int n)
 2. recursion.c - prints a pyramid of the input height using a recurisive function.
 
 3. plurality.c - runs a pluraity election, where each person votes for one person to select a winner.
+
+4. runoff.c - simulates a runoff election, which involves ranked choice voting (only completed the functions).
