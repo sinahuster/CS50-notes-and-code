@@ -143,3 +143,7 @@ void countdown(int n)
 4. runoff.c - simulates a runoff election, which involves ranked choice voting (only completed the functions).
 
 5. tideman.c - simulates the tideman voting methos, which uses ranked choice voting via ranked pairs (only completed the functions)
+
+6. atoi.c - a recursive relationship to change a string into an integer
+
+7. snackbar.c - creates a menu and allows orders from the menu and gives the price 
