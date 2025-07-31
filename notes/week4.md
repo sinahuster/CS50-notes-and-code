@@ -2,4 +2,44 @@
 
 ## Topics Covered
 - Hexadecimals
-- Pointers 
+- Pointers
+- Strings
+- Pointer Arithmetic
+- String Comparison
+- Copying and Malloc
+- Valgrind
+- Swapping
+- ```scanf```
+- File I/O
+
+## Hexadecimals 
+
+
+## Pointers
+
+
+
+## Strings
+
+
+## Pointer Arithemetic
+
+
+## String Comparison
+
+
+
+## Valgrind
+
+
+
+## Swapping 
+
+
+
+## scanf
+
+
+
+## File I/O
+
