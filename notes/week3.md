@@ -10,7 +10,7 @@
 
 ## Searching algorithms 
 
-Linear Search 
+### Linear Search 
 - Iterates through each elemnent one by one
 - O(n) time complexity
 - If looking for ```target``` within ```array[i]```
@@ -25,7 +25,7 @@ Linear Search
 return false;
 ```
 
-Binary Search 
+### Binary Search 
 - Only works in sorted arrays
 - Repeated divides the search interval in half
 - O(log n) time complexity
@@ -51,7 +51,7 @@ int binary_search(int array[], int size, int target)
 
 ## Sorting Algorithms 
 
-Bubble Sort 
+### Bubble Sort 
 - Repeatedly swaps adjascent elements if they are in the wrong order
 - Worst case time: O(n^2)
 - Sorting an array in size order:
@@ -68,7 +68,7 @@ for (int i = 0; i < n; i++)
 }
 ```
 
-Selection Sort 
+### Selection Sort 
 - Repeatedly delects the smallest element and moves it to the front
 - Worst case time: O(n^2)
 - Sorting an array in size order:
@@ -93,7 +93,7 @@ for (int i = 0; i < n; i++)
 }
 ```
 
-Merge Sort 
+### Merge Sort 
 - Recursively splits the array in half, sorts each half and then merges then back together
 - Time complexity: O(n log n)
 - Space complexity: O(n)
