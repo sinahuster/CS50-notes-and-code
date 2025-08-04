@@ -122,4 +122,6 @@ valgrind ./program
 
 5. cp.c - Copies a file.
 
-6. copy.c - Capitilises a copy of a string without memory errors 
+6. copy.c - Capitilises a copy of a string without memory errors
+
+7. helpers.c within filter-more - applys filters to images (BMPs).
