@@ -107,3 +107,14 @@ Trees and Tries help with structured and fast searching
 Hash tables give fast lookups using keys 
 
 ## Code Descriptions 
+
+1. list.c - appends numbers to a linked list.
+
+2. tree.c - implements a list of numbers as a binary search tree.
+
+3. trie.c - saves dog names as tries and determines if the name input is in the trie.
+
+4. inheritance.c (completed create_family and free_family functions) - creates a family and assigns blood type to each family member,                                                                          the oldest generation is assigned randomly.
+
+5. dictionary.c (within speller) - spell checks a text, using a dictionary via hashing and a hash table, while trying to minimise the
+                                   time it takes.
