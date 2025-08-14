@@ -146,3 +146,15 @@ pip install libraryname
 ```
 
 ## Code Descriptions 
+
+1. mario-more.py - Create a pyramid of a height given by the user. 
+
+2. credit.py - Determining if a number is a valid credit card number, if so, which type of card it is. 
+
+3. readability.py - Determining the reading level of a text, taking length of words and sentances into account.
+
+4. dna.py - Identify which person a DNA sequence belongs to, using dictionaries (only completed main()).
+
+5. phrases.py - Use of for loops. 
+
+6. jar.py - definition of a class and adding methods. 
