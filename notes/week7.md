@@ -123,3 +123,9 @@ SELECT * FROM users WHERE username = '' OR '1'='1';
  
 
 ## Code Descriptions
+
+1. movies.sql - created varies queries which search the movies.db, includes use of JOIN, ORDER BY, LIMIT
+
+2. log.sql, answers.txt (fiftyville) - searched through the data in fiftyville.db to find out who the theif and accomplice were
+
+3. prophecy.py - using SQL within python to create a database and insert the data from a .csv
