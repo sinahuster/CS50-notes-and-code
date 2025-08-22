@@ -124,8 +124,10 @@ SELECT * FROM users WHERE username = '' OR '1'='1';
 
 ## Code Descriptions
 
-1. movies.sql - created varies queries which search the movies.db, includes use of JOIN, ORDER BY, LIMIT
+1. favorites.sql - changed the name of data in the favorites.db, using UPDATE 
 
-2. log.sql, answers.txt (fiftyville) - searched through the data in fiftyville.db to find out who the theif and accomplice were
+2. movies.sql - created varies queries which search the movies.db, includes use of JOIN, ORDER BY, LIMIT
 
-3. prophecy.py - using SQL within python to create a database and insert the data from a .csv
+3. log.sql, answers.txt (fiftyville) - searched through the data in fiftyville.db to find out who the theif and accomplice were
+
+4. prophecy.py - using SQL within python to create a database and insert the data from a .csv
