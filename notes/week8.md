@@ -16,7 +16,7 @@ HTML structes the content of web pages.
 Basic Structure:
 ```
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>My Page</title>
   </head>
@@ -33,6 +33,42 @@ Common Elements:
 - Links: ```<a href = "">```
 - Lists: ```<ul>```, ```<ol>```, ```<li>```
 - Forms: ```<form>```, ```<input>```, ```<button>```
+
+Image
+```
+<!DOCTYPE html>
+
+<!-- Demonstrates image -->
+
+<html lang="en">
+    <head>
+        <title>image</title>
+    </head>
+    <body>
+        <img alt="photo of bridge" src="bridge.png">
+    </body>
+</html>
+```
+The same can be done for videos.
+
+Google search
+```
+<!DOCTYPE html>
+
+<!-- Demonstrates additional form attributes -->
+
+<html lang="en">
+    <head>
+        <title>search</title>
+    </head>
+    <body>
+        <form action="https://www.google.com/search" method="get">
+            <input autocomplete="off" autofocus name="q" placeholder="Query" type="search">
+            <button>Google Search</button>
+        </form>
+    </body>
+</html>
+```
 
 ## CSS
 
@@ -52,6 +88,77 @@ Ways to use CSS
 1. Inline (```style="color:red;"```)
 2. Internal (```<style>...</style>```)
 3. External (```<link rel="stylesheet" href="style.css">```)
+
+CSS can be used in HTML as follows:
+```
+<!DOCTYPE html>
+
+<!-- Uses semantic tags instead of DIVs -->
+
+<html lang="en">
+    <head>
+        <title>css</title>
+    </head>
+    <body style="text-align: center">
+        <header style="font-size: large">
+            John Harvard
+        </header>
+        <main style="font-size: medium">
+            Welcome to my home page!
+        </main>
+        <footer style="font-size: small">
+            Copyright &#169; John Harvard
+        </footer>
+    </body>
+</html>
+```
+
+A CSS file could look as follows:
+```
+.centered
+{
+    text-align: center;
+}
+
+.large
+{
+    font-size: large;
+}
+
+.medium
+{
+    font-size: medium;
+}
+
+.small
+{
+    font-size: small;
+}
+```
+Then it can be acessed from a HTML file as follows
+```
+<!DOCTYPE html>
+
+<!-- Demonstrates external stylesheets -->
+
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>css</title>
+    </head>
+    <body class="centered">
+        <header class="large">
+            John Harvard
+        </header>
+        <main class="medium">
+            Welcome to my home page!
+        </main>
+        <footer class="small">
+            Copyright &#169; John Harvard
+        </footer>
+    </body>
+</html>
+```
 
 ## Javascript
 
