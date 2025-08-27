@@ -183,6 +183,45 @@ for (let i = 0; i < 5; i++) {
   console.log(i);
 }
 ```
+The following autocompletes text: 
+```
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>autocomplete</title>
+    </head>
+
+    <body>
+
+        <input autocomplete="off" autofocus placeholder="Query" type="text">
+
+        <ul></ul>
+
+        <script src="large.js"></script>
+        <script>
+      
+            let input = document.querySelector('input');
+            input.addEventListener('keyup', function(event) {
+                let html = '';
+                if (input.value) {
+                    for (word of WORDS) {
+                        if (word.startsWith(input.value)) {
+                            html += `<li>${word}</li>`;
+                        }
+                    }
+                }
+                document.querySelector('ul').innerHTML = html;
+            });
+
+        </script>
+
+    </body>
+</html>
+```
+It pulls from a file called ```large.js``` which is a list of words. 
+
 
 ## DOM 
 
@@ -192,6 +231,35 @@ Selecting Elements:
 ```
 document.querySelector("h1").innerHTML = "Changed!";
 document.querySelectorAll("p");
+```
+
+```DOMContentLoaded``` ensures that the whole page is loaded before executing the JavaScript.
+```
+<!DOCTYPE html>
+
+<!-- Demonstrates DOMContentLoaded -->
+
+<html lang="en">
+    <head>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('form').addEventListener('submit', function(e) {
+                    alert('hello, ' + document.querySelector('#name').value);
+                    e.preventDefault();
+                });
+            });
+
+        </script>
+        <title>hello</title>
+    </head>
+    <body>
+        <form>
+            <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+            <input type="submit">
+        </form>
+    </body>
+</html>
 ```
 
 ## Event Handling
