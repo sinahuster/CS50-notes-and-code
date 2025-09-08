@@ -298,3 +298,17 @@ fetch("https://api.example.com/data")
 
 - ## Code Descriptions 
 
+1. table.html - demonstates how to create a table in HTML. 
+
+2. search.html - demonstrates how to create a search box in HTML. 
+
+3. register.html - demonstrates registration of an email which requires a certain format in order to be accepted in HTML 
+
+4. link.html - demonstates how to add a link in HTML. 
+
+5. hello.html - demonstrates the use of Javascript to make a webpage intereactive. 
+
+6. trivia - created one multiple choice question and one open ended question using HTML, CSS and Javascript. 
+
+7. homepage - created an extremely basic personal webpage containing four different HTML pages, ten HTML tags, a feature from Bootstrap,
+              five CSS selectors, and an interative feature from Javascript. 
