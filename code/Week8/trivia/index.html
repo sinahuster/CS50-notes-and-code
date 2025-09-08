@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+             document.addEventListener('DOMContentLoaded', function()
+             {
+
+                // Group correct elements
+                let correct_ans = document.querySelectorAll('.correct');
+
+                // Add event listener to each correct button
+                for (let i = 0; i < correct_ans.length; i++)
+                {
+                    correct_ans[i].addEventListener('click', function()
+                    {
+                        // Change colour to green
+                        correct_ans[i].style.backgroundColor = 'Green';
+
+                        // Print correct below
+                        let result = document.querySelector('.feedback');
+                        result.innerHTML = 'Correct!';
+
+                    });
+                }
+
+                // Group incorrect elements
+                let incorrect_ans = document.querySelectorAll('.incorrect');
+
+                for (let i = 0; i < incorrect_ans.length; i++)
+                {
+                    incorrect_ans[i].addEventListener('click', function()
+                {
+                    // Change colour to red
+                    incorrect_ans[i].style.backgroundColor = 'Red';
+
+                    // Print incorrect below
+                    let result = document.querySelector('.feedback');
+                    result.innerHTML = 'Incorrect!';
+
+                });
+                }
+
+                // Check the free response
+                document.querySelector('#check').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if (input.value == 'Gryffindor')
+                    {
+                        input.style.backgroundColor = 'Green';
+                        document.querySelector('.feedback').innerHTML = 'Correct!';
+                    }
+                    else
+                    {
+                        input.style.backgroundColor = 'Red';
+                        document.querySelector('.feedback').innerHTML = 'Incorrect';
+
+                    }
+
+                });
+
+             });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the name of the centaur who takes over teaching Divination after Professor Trelawney is sacked?</h3>
+                <button class = "correct">Firenze </button>
+                <button class = "incorrect">Magorian </button>
+                <button class = "incorrect">Bane </button>
+                <button class = "incorrect">Ronan </button>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>In which house was Albus Dumbledore?</h3>
+                <input type = "text"></input>
+                <button id = "check">Check answer</button>
+                <p class="feedback"></p>
+            </div>
+        </div>
+    </body>
+</html>
