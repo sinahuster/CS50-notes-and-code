@@ -1,0 +1,46 @@
+CS50 Homepage Project Specification
+
+HTML Tags (10 distinct tags used):
+1. h1          - Main page heading
+2. h2          - Section headings
+3. p           - Paragraphs and text content
+4. nav         - Navigation bar containing links
+5. ul          - Unordered list for navbar items
+6. li          - List items inside the navbar
+7. a           - Hyperlinks for navigation
+8. img         - Images on the homepage
+9. footer      - Footer at the bottom of the page
+10. button     - Dark/light mode toggle button
+
+CSS Selectors (at least 5):
+1. body        - Sets default background, text color, font, and line height
+2. .container  - Centers content and adds padding
+3. .header     - Styles the page header section
+4. .section    - Styles content sections and hover effect
+5. h1          - Sets font family and size for main headings
+6. .caption    - Styles image captions (italic, centered, color)
+7. footer      - Styles footer background, text color, and padding
+8. button:hover- Adds hover effects to buttons (background, color, scale)
+9. body.bg-dark- Styles page for dark mode (background and text color)
+10. input[type="text"] - Styles text input boxes (width, line-height, hover)
+
+CSS Properties (at least 5 used):
+- background-color
+- color
+- font-size
+- font-family
+- margin
+- padding
+- line-height
+- font-weight
+- text-align
+- transition
+
+Bootstrap Usage:
+- Used Bootstrap classes for navbar (`navbar`, `navbar-expand-lg`, `nav-link`),
+  buttons (`btn`, `btn-dark`, `btn-light`), and responsive grid (`container`, `row`, `col-md-6`)
+  to ensure the site is mobile-friendly and visually appealing.
+
+JavaScript Usage:
+- Implemented a dark/light mode toggle button that adds/removes the `bg-dark` and `text-light` classes
+  on the `<body>` element when clicked, allowing the user to switch the page theme interactively.

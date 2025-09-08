@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<hmtl lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>About Me!</title>
+    </head>
+    <body>
+        <h1 style="text-align:center;">Sina Huster</h1>
+        <button id="darkModeBtn" class="btn btn-dark mt-3">Dark Mode</button>
+        <nav class="navbar navbar-expand-lg bg-light">
+
+             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">HomePage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Me!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Information</a>
+                </li>
+            </ul>
+        </nav>
+        <h2>About Me!</h2>
+        <p>
+            I graduated from the University of Manchester in 2024 with a 2:1 in MMath. <br>
+            I am now self-studying programming in the hopes of becoming a software engineer in the future.
+        </p>
+        <p> I enjoy horse riding and have two horses. They are called Maude and Mae and are 13 and 11.</p>
+
+       <div class="container text-center mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="Maude.jpeg" alt="Photo of Maude" class="img-fluid rounded" width="300">
+                    <p class="caption">Maude sleeping</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="Mae.jpeg" alt="Photo of Mae" class="img-fluid rounded" width="300">
+                    <p class="caption">Mae sleeping</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-light text-center text-muted py-3 fixed-bottom">
+            <p>&copy; 2025 Sina Huster. All rights reserved.</p>
+        </footer>
+
+        <script>
+            const btn = document.getElementById("darkModeBtn");
+
+            btn.addEventListener("click", function() {
+                document.body.classList.toggle("bg-dark");
+                document.body.classList.toggle("text-light");
+
+                // Optional: toggle button color so it always looks visible
+                btn.classList.toggle("btn-light");
+                btn.classList.toggle("btn-dark");
+            });
+        </script>
+    </body>
+</hmtl>
