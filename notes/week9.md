@@ -229,3 +229,9 @@ def api_data():
 ```
 
 ## Code Descriptions
+
+1. Hello - Greets the user when they submit their name
+
+2. Birthdays - Allows the user to input birthdays and they are then displayed 
+
+3. Finance - Allows the user to register, login, get quotes for share prices, buy and sell shares, view their transaction history, view              view their current portfolio and change their password. 
