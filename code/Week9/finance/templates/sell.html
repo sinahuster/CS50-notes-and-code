@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="vh-100 d-flex justify-content-center align-items-center" style="background-color: #f8f9fa;">
+    <form action="/sell" method="post" class="p-5 border rounded shadow bg-white" style="width: 100%; max-width: 450px;">
+        <h1 class="text-center mb-4">Sell</h1>
+        <div class="mb-3">
+            <label class="form-control-lg" for="symbol-select">Choose a symbol:</label> <br>
+
+            <select class="form-control-lg" name="symbol" id="symbol-select">
+            <option value="">--Please choose--</option>
+
+            {% for symbol in symbols %}
+            <option value= {{ symbol }} > {{ symbol }} </option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="form-control form-control-lg" name="shares" type="number" placeholder="shares">
+        </div>
+        <button class="btn btn-primary btn-lg w-100" type="submit">Sell</button>
+    </form>
+</div>
+{% endblock %}
