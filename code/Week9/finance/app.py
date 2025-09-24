@@ -38,10 +38,12 @@ def index():
     """Show portfolio of stocks"""
 
     # Determine the avaliable cash of the user
-    cash_avaliable = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+    cash_avaliable = db.execute("SELECT cash FROM users WHERE id = ?",
+                                session["user_id"])[0]["cash"]
 
     # Find all the purchases of the user
-    portfolio = db.execute("SELECT symbol, shares FROM portfolio WHERE user_id = ?", session["user_id"])
+    portfolio = db.execute(
+        "SELECT symbol, shares FROM portfolio WHERE user_id = ?", session["user_id"])
 
     # For each symbol, find the current shares value price and total share value
     current = []
@@ -58,10 +60,10 @@ def index():
         total_stock_value += stock_value
 
         current.append({
-            "symbol" : symbol,
-            "shares" : shares,
-            "price" : usd(price),
-            "stock_value" : usd(stock_value),
+            "symbol": symbol,
+            "shares": shares,
+            "price": usd(price),
+            "stock_value": usd(stock_value),
         })
 
     total = usd(total_stock_value + cash_avaliable)
@@ -88,6 +90,10 @@ def buy():
         if not shares:
             return apology("Please input a number of shares")
 
+        # Check shares is a postive integer
+        if not shares.isdigit() or int(shares) <= 0:
+            return apology("Please enter a valid number of shares")
+
         # Determine the stock the symbol belongs to
         stock = lookup(symbol)
 
@@ -110,9 +116,11 @@ def buy():
         # Add to portfolio
         rows = db.execute("SELECT shares FROM portfolio WHERE symbol = ?", symbol.upper())
         if len(rows) == 1:
-            db.execute("UPDATE portfolio SET shares = shares + ? WHERE symbol = ? AND user_id = ?", shares, symbol.upper(), session["user_id"])
+            db.execute("UPDATE portfolio SET shares = shares + ? WHERE symbol = ? AND user_id = ?",
+                       shares, symbol.upper(), session["user_id"])
         else:
-            db.execute("INSERT INTO portfolio (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], symbol.upper(), shares)
+            db.execute("INSERT INTO portfolio (user_id, symbol, shares) VALUES (?, ?, ?)",
+                       session["user_id"], symbol.upper(), shares)
 
         # Determine the new value of cash for the user
         cash[0]["cash"] = cash[0]["cash"] - cash_spent
@@ -132,7 +140,8 @@ def history():
     """Show history of transactions"""
 
     # Find all previous transactions
-    transactions = db.execute("SELECT symbol, shares, price, purchase_time FROM transactions WHERE user_id = ?", session["user_id"])
+    transactions = db.execute(
+        "SELECT symbol, shares, price, purchase_time FROM transactions WHERE user_id = ?", session["user_id"])
 
     history = []
 
@@ -144,13 +153,12 @@ def history():
             type = "sold"
 
         history.append({
-            "symbol" : row["symbol"],
-            "shares" : abs(row["shares"]),
-            "price" : usd(row["price"]),
+            "symbol": row["symbol"],
+            "shares": abs(row["shares"]),
+            "price": usd(row["price"]),
             "type": type,
             "time": row["purchase_time"]
         })
-
 
     return render_template("history.html", history=history)
 
@@ -223,11 +231,14 @@ def quote():
         if (stock == None):
             return apology("This symbol does not exsist")
 
+        # Format the price to 2 decimal places
+        stock["price"] = usd(stock["price"])
+
         return render_template("quoted.html", stock=stock)
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-       return render_template("quote.html")
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -266,7 +277,8 @@ def register():
 
         # Try the insert the person into the database
         try:
-            new_user_id = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, password_hash)
+            new_user_id = db.execute(
+                "INSERT INTO users (username, hash) VALUES (?, ?)", username, password_hash)
 
         except (ValueError, sqlite3.IntegrityError):
             return apology("This username already exists")
@@ -283,7 +295,7 @@ def register():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-       return render_template("register.html")
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
@@ -305,7 +317,8 @@ def sell():
             return apology("Please enter a positive number of shares")
 
         # Find the symbols and shares of the stocks which are owned
-        rows = db.execute("SELECT shares FROM portfolio WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+        rows = db.execute(
+            "SELECT shares FROM portfolio WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
 
         if len(rows) != 1:
             return apology("You do not have any shares in this stock")
@@ -313,14 +326,15 @@ def sell():
         owned_shares = rows[0]["shares"]
 
         if owned_shares == shares:
-            db.execute("DELETE FROM portfolio WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])
+            db.execute("DELETE FROM portfolio WHERE symbol = ? AND user_id = ?",
+                       symbol, session["user_id"])
 
         elif owned_shares < shares:
             return apology("You do not have enough shares in this stock")
 
         elif owned_shares > shares:
-            db.execute("UPDATE portfolio SET shares = shares - ? WHERE symbol = ? AND user_id = ?", shares, symbol.upper(), session["user_id"])
-
+            db.execute("UPDATE portfolio SET shares = shares - ? WHERE symbol = ? AND user_id = ?",
+                       shares, symbol.upper(), session["user_id"])
 
         # Find the current price of the shares
         quote = lookup(symbol)
@@ -328,7 +342,6 @@ def sell():
 
         db.execute("INSERT INTO transactions (user_id, symbol, price, purchase_time, shares) VALUES (?, ?, ?, ?, ?)",
                    session["user_id"], symbol.upper(), quote["price"], datetime.datetime.now(), -int(shares))
-
 
         # Redirect to the homepage
         return redirect("/")
@@ -373,10 +386,10 @@ def reset():
 
         db.execute("UPDATE users SET hash = ? WHERE username = ?", new_hash, username)
 
-
         # Redirect to login
         return redirect("/login")
 
     # If user uses route is GET
     else:
         return render_template("reset.html")
+
